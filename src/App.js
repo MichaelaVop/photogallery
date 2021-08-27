@@ -9,10 +9,10 @@ function App() {
   return (
     <div >
       <h1>Misha's image gallery</h1>
-      <div>
+      {/* <div>
         <input id='searchInput' type='text' placeholder='Search Images' ></input>
         <i className="bi bi-search"></i>
-      </div>
+      </div> */}
 
 
       <ImgUnsplash />

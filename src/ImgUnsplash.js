@@ -7,7 +7,7 @@ function ImgUnsplash() {
 
     useEffect(() => {
 
-        fetch("https://api.pexels.com/v1/search?query=vancouver&page=3&per_page=30", {
+        fetch("https://api.pexels.com/v1/search?query=vancouver&per_page=30", {
             headers: {
                 Authorization: process.env.REACT_APP_apiKey
             }
@@ -19,7 +19,7 @@ function ImgUnsplash() {
                 setPhotos(data.photos)
             })
         console.log(photos)
-    }, [])
+    }, [photos])
 
     const [tempShow, setTempShow] = useState(false)
     const [temporaryImgSrc, setTempImgSrc] = useState('')
@@ -33,19 +33,19 @@ function ImgUnsplash() {
     return (
         <>
             <div className={tempShow ? 'tempShow open' : 'tempShow'}>
-                <img src={temporaryImgSrc} />
+                <img src={temporaryImgSrc} alt='' />
                 <CloseIcon onClick={() => setTempShow(false)} />
             </div>
 
             <div className='gallery'>
-                {photos.map(image =>
+                {photos && photos.length ? photos.map(image =>
                 (
                     <div className='imgs' key={image.id} onClick={() => showImg(image.src.portrait)}>
-                        <img src={image.src.portrait} />
+                        <img src={image.src.portrait} alt={image.photographer}/>
                     </div>
                 )
 
-                )}
+                ): <p>loading....</p>}
                 <div className='lastChild'></div>
             </div>
         </>
