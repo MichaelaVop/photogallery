@@ -19,7 +19,7 @@ function ImgUnsplash() {
                 setPhotos(data.photos)
             })
         console.log(photos)
-    }, [photos])
+    }, [])
 
     const [tempShow, setTempShow] = useState(false)
     const [temporaryImgSrc, setTempImgSrc] = useState('')
