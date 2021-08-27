@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import ImgUnsplash from './ImgUnsplash';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <h1>Misha's image gallery</h1>
+      <div>
+        <input id='searchInput' type='text' placeholder='Search Images' ></input>
+        <i className="bi bi-search"></i>
+      </div>
+
+
+      <ImgUnsplash />
+
+      {/* <div>
+        <a className='loadMore'>Load More</a>
+      </div> */}
+
     </div>
   );
 }
