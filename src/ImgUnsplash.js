@@ -9,7 +9,7 @@ function ImgUnsplash() {
 
         fetch("https://api.pexels.com/v1/search?query=vancouver&per_page=30", {
             headers: {
-                Authorization: process.env.REACT_APP_apiKey
+                Authorization: '563492ad6f917000010000019a2301872b22472fa2b1146ddc08a277'
             }
         })
             .then(resp => {
